@@ -1,0 +1,207 @@
+:root {
+  --black: #323235;
+}
+
+.particle-wrapper {
+  z-index: -75;
+  width: 700px;
+  height: 310px;
+  position: absolute;
+  top: -108px;
+  will-change: transform;
+  will-change: opacity, transform;
+  opacity: 0;
+  transform: scale(1.5);
+  animation: particleLoad 0.5s ease-out forwards;
+}
+
+@keyframes particleLoad {
+  from {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.particle {
+  position: absolute;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.particle-1 {
+  background-color: var(--black);
+  opacity: 0.4;
+  border-radius: 6px;
+  width: 20px;
+  height: 20px;
+  top: 90px;
+  right: 159px;
+  transform: rotate(51deg);
+}
+
+.particle-1.purple {
+  background-color: #8474f9;
+  border-radius: 15px;
+}
+
+.particle-2 {
+  background-color: var(--black);
+  opacity: 0.3;
+  border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  top: 200px;
+  right: 600px;
+  transform: rotate(20deg);
+}
+
+.particle-2.pink {
+  background-color: #f4717d;
+  border-radius: 15px;
+}
+
+.particle-3 {
+  background-color: var(--black);
+  opacity: 0.4;
+  border-radius: 2px;
+  width: 9px;
+  height: 9px;
+  top: 94px;
+  right: 624px;
+  transform: rotate(-17deg);
+}
+
+.particle-3.blue {
+  background-color: #55a5ff;
+  border-radius: 15px;
+}
+
+.particle-4 {
+  opacity: 0.2;
+  background-color: #000;
+  border-radius: 5px;
+  width: 15px;
+  height: 15px;
+  top: 64px;
+  right: 428px;
+  transform: rotate(26deg);
+}
+
+.particle-4.pink {
+  background-color: #f4717d;
+  border-radius: 15px;
+}
+
+.particle-5 {
+  background-color: var(--black);
+  opacity: 0.2;
+  border-radius: 4px;
+  width: 12px;
+  height: 12px;
+  top: 203px;
+  right: 448px;
+  transform: rotate(-11deg);
+}
+
+.particle-5.purple {
+  background-color: #8474f9;
+  border-radius: 15px;
+}
+
+.particle-6 {
+  background-color: var(--black);
+  opacity: 0.2;
+  border-radius: 4px;
+  width: 12px;
+  height: 12px;
+  top: 251px;
+  right: 262px;
+  transform: rotate(14deg);
+}
+
+.particle-6.blue {
+  background-color: #55a5ff;
+  border-radius: 15px;
+}
+
+.particle-7 {
+  background-color: var(--black);
+  opacity: 0.2;
+  border-radius: 2px;
+  width: 9px;
+  height: 9px;
+  top: 213px;
+  right: 104px;
+  transform: rotate(-14deg);
+}
+
+.particle-7.purple {
+  background-color: #8474f9;
+  border-radius: 15px;
+}
+
+.particle-8 {
+  background-color: var(--black);
+  opacity: 0.15;
+  border-radius: 3px;
+  width: 11px;
+  height: 11px;
+  top: 111px;
+  right: 64px;
+  transform: rotate(17deg);
+}
+
+.particle-8.pink {
+  background-color: #f4717d;
+  border-radius: 15px;
+}
+.particle-overflow-hide {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+}
+@media screen and (max-width: 991px) {
+  .particle-wrapper {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 479px) {
+  .particle-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    left: -31px;
+  }
+  .particle-1 {
+    right: -3px;
+  }
+  .particle-2 {
+    top: 184px;
+    right: 302px;
+  }
+  .particle-3 {
+    right: 333px;
+  }
+  .particle-4 {
+    right: 215px;
+  }
+  .particle-5 {
+    right: 72px;
+  }
+  .particle-6 {
+    top: 226px;
+    right: 214px;
+  }
+  .particle-7 {
+    top: 187px;
+    right: 0;
+  }
+  .particle-8 {
+    top: 97px;
+    right: 125px;
+  }
+}
