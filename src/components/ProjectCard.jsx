@@ -1,5 +1,6 @@
 import React from "react";
 import github from "../assets/github.svg"
+import MagneticWrapper from "./common/MagneticWrapper";
 
 export default function ProjectCard({ icon, title, subtitle, year, description, buttonText = "Github", onButtonClick, image }) {
   return (
@@ -15,13 +16,15 @@ export default function ProjectCard({ icon, title, subtitle, year, description, 
 
         <p className="mt-4 text-gray-600 text-lg">{description}</p>
 
-        <button
-          onClick={onButtonClick}
-          className="mt-6 inline-flex items-center gap-2 bg-white border-2 border-white px-5 py-2 rounded-xl text-[#323235] font-medium transition-all duration-300 tracking-wider hover:bg-[#eceff1] hover:shadow-[0_4px_24px_0_#00000014] group"
-        >
-          {buttonText}
-          <img src={github} alt="github" className="group-hover:-rotate-10 group-hover:scale-110 transition-all duration-300"/>
-        </button>
+        <MagneticWrapper rotateDamp={8} perspective={500}>
+          <button
+            onClick={onButtonClick}
+            className="mt-6 inline-flex items-center gap-2 bg-white border-2 border-white px-5 py-2 rounded-xl text-[#323235] font-medium transition-all duration-300 tracking-wider hover:bg-[#eceff1] hover:shadow-[0_4px_24px_0_#00000014] group"
+          >
+            {buttonText}
+            <img src={github} alt="github" className="group-hover:-rotate-10 group-hover:scale-110 transition-all duration-300"/>
+          </button>
+        </MagneticWrapper>
       </div>
 
       <div className="gap-4 flex justify-center relative">
