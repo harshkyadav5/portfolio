@@ -3,13 +3,12 @@ import ProjectCard from "../components/ProjectCard";
 import snapIcon from "../assets/SnapchatIcon.png";
 import snap from "../assets/Snapchat.png";
 import Footer from "../components/Footer";
-import TechStack from "../components/TechStack";
 
 export default function Home() {
   return (
     <>
         <Hero />
-        <TechStack />
+
         <div className="flex flex-col justify-center items-center gap-25 mb-25 antialiased">
           <ProjectCard
             icon={snapIcon}
