@@ -9,7 +9,7 @@ export default function Home() {
     <>
         <Hero />
 
-        <div className="flex flex-col justify-center items-center gap-25 mb-25 antialiased">
+        <div className="flex flex-col justify-center items-center gap-25 mb-25 antialiased load">
           <ProjectCard
             icon={snapIcon}
             title="Simple Snapchat"

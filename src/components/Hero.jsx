@@ -4,7 +4,7 @@ import ParticleAnimationGSAP from "./ParticleAnimation";
 
 export default function Hero() {
   return (
-    <section className="relative w-full mt-[240px] mb-[140px] text-[#5e5e63] flex flex-col items-center justify-center leading-[2.5] overflow-visible antialiased">
+    <section className="relative w-full mt-[240px] mb-[140px] text-[#5e5e63] flex flex-col items-center justify-center leading-[2.5] overflow-visible antialiased load">
       <div className="z-10 max-w-xl w-full px-6 text-center">
         <h1
           className="text-5xl md:text-7xl font-bold leading-[1.5]
