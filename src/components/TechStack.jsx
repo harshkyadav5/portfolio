@@ -68,7 +68,7 @@ export default function TechStack() {
 
   const handleMouseEnter = () => {
     gsap.to(tl.current, {
-      timeScale: 0.1,
+      timeScale: 0.3,
       duration: 1.2,
       ease: "power2.out"
     });
@@ -83,9 +83,9 @@ export default function TechStack() {
   };
 
   return (
-    <section className="relative pt-2 pb-40 text-gray-800 overflow-hidden antialiased">
+    <section className="relative pt-6 pb-40 text-gray-800 overflow-hidden antialiased load">
       <div className="max-w-5xl mx-auto">
-        <h2 className="text-3xl font-bold mb-2 p-2 text-center text-[#5e5e63]">
+        <h2 className="text-3xl font-bold mb-2 mt-6 p-2 text-center text-[#5e5e63]">
           My Tech Stack
         </h2>
 
@@ -94,11 +94,11 @@ export default function TechStack() {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          <div ref={marqueeRef} className="flex w-max p-5">
+          <div ref={marqueeRef} className="flex w-max p-5 gap-8">
             {doubledTechStack.map((tech, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center justify-center min-w-[140px] mx-4 bg-[#eceff1] rounded-2xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
+                className="flex flex-col items-center justify-center min-w-[140px] bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
               >
                 <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
                 <span className="text-base text-gray-700 text-center tracking-wider">

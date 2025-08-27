@@ -6,7 +6,7 @@ import MagneticWrapper from "./common/MagneticWrapper";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f1f1f1] py-10">
+    <footer className="bg-[#f1f1f1] py-10 load">
       <div className="flex flex-col items-center gap-6">
         
         <div className="flex gap-8 items-center">

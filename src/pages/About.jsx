@@ -1,8 +1,17 @@
+import Banner from "../components/Banner";
+import AboutIntro from "../components/AboutIntro";
+import TechStack from "../components/TechStack";
+import EducationDetail from "../components/EducationDetail";
+import Footer from "../components/Footer";
+
 export default function About() {
   return (
-    <div className="antialiased">
-      <h1 className="text-blue-700">About Page</h1>
-      <p>This is the About page.</p>
-    </div>
-  );
+      <>
+        <Banner />
+        <AboutIntro />
+        <EducationDetail />
+        <TechStack />
+        <Footer />
+      </>
+    );
 }
