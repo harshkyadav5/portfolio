@@ -1,6 +1,6 @@
 import React from "react";
 import github from "../assets/github.svg";
-import linkedin from "../assets/Linkedin.svg";
+import linkedin from "../assets/LinkedIn.svg";
 import leetcode from "../assets/leetcode.svg";
 import MagneticWrapper from "./common/MagneticWrapper";
 
