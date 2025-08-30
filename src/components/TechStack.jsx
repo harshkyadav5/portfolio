@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
 
 import htmlLogo from "../assets/html.svg";
@@ -50,37 +50,65 @@ export default function TechStack() {
   const marqueeRef = useRef(null);
   const tl = useRef(null);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-        tl.current = gsap.timeline({ repeat: -1, repeatDelay: 1 });
+  const [isMobile, setIsMobile] = useState(false);
 
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const handleResize = () => {
+      setIsMobile(mediaQuery.matches);
+    };
+
+    handleResize();
+    mediaQuery.addEventListener("change", handleResize);
+
+    if (!mediaQuery.matches) {
+      const ctx = gsap.context(() => {
+        tl.current = gsap.timeline({ repeat: -1, repeatDelay: 1 });
         tl.current
         .to(marqueeRef.current, {
-            xPercent: -50,
-            duration: 35,
-            ease: "linear",
-            delay: 1,
+          xPercent: -50,
+          duration: 35,
+          ease: "linear",
+          delay: 1,
         });
-    });
+      });
+      return () => ctx.revert();
+    }
 
-    return () => ctx.revert();
-    }, []);
+    return () => mediaQuery.removeEventListener("change", handleResize);
+  }, []);
 
   const handleMouseEnter = () => {
-    gsap.to(tl.current, {
-      timeScale: 0.3,
-      duration: 1.2,
-      ease: "power2.out"
-    });
+    if (tl.current) {
+      gsap.to(tl.current, {
+        timeScale: 0.3,
+        duration: 1.2,
+        ease: "power2.out"
+      });
+    }
   };
 
   const handleMouseLeave = () => {
-    gsap.to(tl.current, {
-      timeScale: 1,
-      duration: 0.8,
-      ease: "power2.out"
-    });
+    if (tl.current) {
+      gsap.to(tl.current, {
+        timeScale: 1,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+    }
   };
+
+  const TechCard = ({ tech }) => (
+    <div
+      className="flex flex-col items-center justify-center bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
+    >
+      <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
+      <span className="text-base text-gray-700 text-center tracking-wider">
+        {tech.name}
+      </span>
+    </div>
+  );
 
   return (
     <section className="relative pt-6 pb-40 text-gray-800 overflow-hidden antialiased load">
@@ -89,25 +117,33 @@ export default function TechStack() {
           My Tech Stack
         </h2>
 
-        <div
-          className="relative w-full overflow-hidden group [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        >
-          <div ref={marqueeRef} className="flex w-max p-5 gap-8">
-            {doubledTechStack.map((tech, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center min-w-[140px] bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
-              >
-                <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
-                <span className="text-base text-gray-700 text-center tracking-wider">
-                  {tech.name}
-                </span>
-              </div>
+        {!isMobile ? (
+          <div
+            className="relative w-full overflow-hidden group [mask-image:linear-gradient(to_right,transparent,black_10%,black_90%,transparent)]"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <div ref={marqueeRef} className="flex w-max p-5 gap-8">
+              {doubledTechStack.map((tech, i) => (
+                <div
+                  key={i}
+                  className="flex flex-col items-center justify-center min-w-[140px] bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
+                >
+                  <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
+                  <span className="text-base text-gray-700 text-center tracking-wider">
+                    {tech.name}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="p-5 grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {techStack.map((tech, i) => (
+              <TechCard key={i} tech={tech} />
             ))}
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 export default function AboutIntro() {
   return (
-    <div className="flex flex-col items-start w-full max-w-[600px] mx-auto py-8 antialiased text-justify load">
+    <div className="flex flex-col items-start w-full max-w-[600px] mx-auto px-4 md:px-0 py-8 antialiased text-justify load">
       <h1 className="text-left text-[36px] font-bold leading-[140%] inline-block mt-8 mb-10 bg-[linear-gradient(141deg,#adf1e0,#8075ff_28%,#ff7171_98%)] bg-clip-text text-transparent">
         Hi again, I'm Harsh.
       </h1>
