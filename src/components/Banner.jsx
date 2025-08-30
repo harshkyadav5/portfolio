@@ -17,7 +17,7 @@ export default function Banner() {
 
   return (
     <div className="flex flex-col items-center max-w-4xl w-full px-3 md:px-8 mx-auto transition-all duration-300 load">
-      <div className="flex justify-center items-center w-full h-auto my-25 md:my-30 lg:my-9 mx-auto relative transition-all duration-300">
+      <div className="flex justify-center items-center w-full h-auto mt-25 mb-0 md:mt-30 md:mb-10 lg:my-9 mx-auto relative transition-all duration-300">
         <img
           src={PortfolioBanner}
           alt="Banner image"
