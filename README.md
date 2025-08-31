@@ -1,13 +1,32 @@
-# React + Vite
+# My Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Hello! 👋 I'm **Harsh Yadav**, a passionate developer who builds interactive web experiences. As a third-year Computer Science undergraduate, I have a strong foundation in both frontend and backend development. I am driven by a hunger to learn new technologies and collaborate on projects that make a real impact.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### About Me
 
-## Expanding the ESLint configuration
+With a strong analytical background and expertise in a variety of technologies, I'm a dedicated problem-solver. I've actively honed my skills by solving over **650 problems on LeetCode** and maintaining a contest max rating of **1724**, demonstrating my commitment to continuous growth and technical excellence.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# portfolio
+---
+
+### Skills
+
+My expertise spans across several domains, from full-stack web development to data science.
+
+* **Frontend:** HTML5, CSS3, TailwindCSS, JavaScript, React
+* **Backend:** Node.js, Express.js
+* **Languages:** C++, Python, Java
+* **Databases:** MySQL, PostgreSQL
+* **Data Science & ML:** NumPy, Pandas, Scikit-Learn, Matplotlib, Seaborn, TensorFlow
+* **Version Control:** Git, GitHub
+
+---
+
+### Let's Connect
+
+I'm always open to new opportunities and collaborations. Feel free to connect with me!
+
+* **LinkedIn:** [https://www.linkedin.com/in/harshyadav05](https://www.linkedin.com/in/harshyadav05)
+* **GitHub:** [https://github.com/harshkyadav5](https://github.com/harshkyadav5)
+* **LeetCode:** [https://leetcode.com/u/harshkyadav5/](https://leetcode.com/u/harshkyadav5/)
