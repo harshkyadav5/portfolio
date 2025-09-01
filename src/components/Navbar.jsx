@@ -4,6 +4,8 @@ import MagneticWrapper from "../components/common/MagneticWrapper";
 import faceAvatar from "../assets/me_2.png";
 import user from "../assets/user.svg";
 import home from "../assets/home.svg";
+import doc from "../assets/doc.svg";
+import arrowRightUp from "../assets/arrow-up-right.svg";
 import Modal from "./Modal";
 
 export default function Navbar() {
@@ -101,6 +103,23 @@ export default function Navbar() {
                   <img src={user} alt="about" />
                   about
                 </Link>
+
+                <div className="m-2 border-t rounded-full border-gray-300" />
+
+                <a
+                  href="https://drive.google.com/file/d/1hgMHjyya5UFKlktMtiW7IVo8f9__uP4b/view?usp=sharing"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between rounded-2xl p-3 hover:bg-gray-100 font-normal text-[#5e5e63]"
+                >
+                  <span className="flex items-center gap-4">
+                    <img src={doc} alt="about" className="pl-0.5" />
+                    resume
+                  </span>
+
+                  <img src={arrowRightUp} alt="arrow-up-right" className="scale-75" />
+                </a>
               </nav>
             </Modal>
           </MagneticWrapper>
