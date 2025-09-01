@@ -1,8 +1,8 @@
 import React from "react";
-import github from "../assets/github.svg"
+import github from "../assets/github.svg";
 import MagneticWrapper from "./common/MagneticWrapper";
 
-export default function ProjectCard({ icon, title, subtitle, year, description, buttonText = "Github", onButtonClick, image }) {
+export default function ProjectCard({ icon, title, subtitle, year, description, buttonText = "Github", url, image }) {
   return (
     <div className="flex flex-col max-w-4xl min-h-110 md:flex-row items-center bg-[#eceff1] rounded-3xl px-16 hover:scale-102 transition-all duration-300 hover:bg-[#f6f6f6] hover:shadow-[0_4px_24px_0_#00000014] antialiased overflow-hidden">
       <div className="flex flex-col justify-start items-start w-105">
@@ -16,22 +16,26 @@ export default function ProjectCard({ icon, title, subtitle, year, description, 
 
         <p className="mt-4 text-gray-600 text-lg">{description}</p>
 
-        <MagneticWrapper rotateDamp={8} perspective={500}>
-          <button
-            onClick={onButtonClick}
-            className="mt-6 inline-flex items-center gap-2 bg-white border-2 border-white px-5 py-2 rounded-xl text-[#323235] font-medium transition-all duration-300 tracking-wider hover:bg-[#eceff1] hover:shadow-[0_4px_24px_0_#00000014] group"
-          >
-            {buttonText}
-            <img src={github} alt="github" className="group-hover:-rotate-10 group-hover:scale-110 transition-all duration-300"/>
-          </button>
-        </MagneticWrapper>
+        {url && (
+          <MagneticWrapper rotateDamp={8} perspective={500}>
+            <a
+              href={url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-flex items-center gap-2 bg-white border-2 border-white px-5 py-2 rounded-xl text-[#323235] font-medium transition-all duration-300 tracking-wider hover:bg-[#eceff1] hover:shadow-[0_4px_24px_0_#00000014] group"
+            >
+              {buttonText}
+              <img src={github} alt="github" className="group-hover:-rotate-10 group-hover:scale-110 transition-all duration-300"/>
+            </a>
+          </MagneticWrapper>
+        )}
       </div>
 
       <div className="gap-4 flex justify-center relative">
           <img
             src={image}
             alt="snap home"
-            className="object-cover h-100 max-w-md md:relative md:-bottom-5 md:-right-12"
+            className="object-cover h-100 max-w-md md:relative md:-bottom-5 md:-right-16"
           />
       </div>
     </div>

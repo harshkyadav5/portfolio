@@ -22,8 +22,9 @@ export default function Hero() {
           I'm a developer who builds interactive web experiences. I'm passionate about creating and learning new things, and I enjoy collaborating with others on projects.
         </p>
 
-        <ParticleAnimationGSAP />
       </div>
+      
+      <ParticleAnimationGSAP />
     </section>
   );
 }
