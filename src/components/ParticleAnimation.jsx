@@ -19,19 +19,105 @@ const particlesData = [
 export default function ParticleAnimationGSAP() {
   const wrapperRef = useRef(null);
 
+  // useEffect(() => {
+  //   const wrapper = wrapperRef.current;
+  //   if (!wrapper) return;
+
+  //   const particles = gsap.utils.toArray('.particle', wrapper);
+
+  //   gsap.set(wrapper, { scale: 1.3, opacity: 0 });
+  //   gsap.to(wrapper, {
+  //     duration: 1,
+  //     opacity: 1,
+  //     scale: 1.3,
+  //     ease: 'power2.out'
+  //   });
+
+  //   const handleMouseMove = (e) => {
+  //     const mouseX = e.clientX;
+  //     const mouseY = e.clientY;
+
+  //     particles.forEach((particle, index) => {
+  //       const data = particlesData[index];
+
+  //       const xOffset = gsap.utils.mapRange(
+  //         0,
+  //         window.innerWidth,
+  //         data.xRange[0],
+  //         data.xRange[1],
+  //         mouseX
+  //       );
+  //       const yOffset = gsap.utils.mapRange(
+  //         0,
+  //         window.innerHeight,
+  //         data.yRange[0],
+  //         data.yRange[1],
+  //         mouseY
+  //       );
+
+  //       gsap.to(particle, {
+  //         x: xOffset,
+  //         y: yOffset,
+  //         rotate: data.rotation,
+  //         duration: 1.5,
+  //         ease: 'power2.out'
+  //       });
+  //     });
+  //   };
+
+  //   gsap.to('.particle-wrapper', {
+  //     ease: 'power1.inOut',
+  //     scrollTrigger: {
+  //       trigger: '.particle-wrapper',
+  //       start: 'top top',
+  //       end: 'bottom top',
+  //       scrub: true,
+  //       onUpdate: (self) => {
+  //         const newScale = 1.3 + self.progress;
+  //         gsap.set('.particle-wrapper', { scale: newScale });
+  //       },
+  //     },
+  //   });
+
+  //   window.addEventListener('mousemove', handleMouseMove);
+
+  //   return () => {
+  //     window.removeEventListener('mousemove', handleMouseMove);
+  //   };
+  // }, []);
+
   useEffect(() => {
     const wrapper = wrapperRef.current;
     if (!wrapper) return;
 
     const particles = gsap.utils.toArray('.particle', wrapper);
 
-    gsap.set(wrapper, { scale: 1.5, opacity: 0 });
-    gsap.to(wrapper, {
-      duration: 1,
-      opacity: 1,
-      scale: 1,
-      ease: 'power2.out'
-    });
+    const mm = gsap.matchMedia();
+
+    mm.add(
+      {
+        isDesktop: "(min-width: 1051px)",
+        isTablet: "(max-width: 1050px) and (min-width: 911px)",
+        isSmallTablet: "(max-width: 910px) and (min-width: 721px)",
+        isMobile: "(max-width: 720px)"
+      },
+      (context) => {
+        let scale = 1.5;
+
+        if (context.conditions.isTablet) scale = 1.3;
+        if (context.conditions.isSmallTablet) scale = 1.1;
+        if (context.conditions.isMobile) scale = 1;
+
+        gsap.set(wrapper, { scale, opacity: 0 });
+
+        gsap.to(wrapper, {
+          duration: 1,
+          opacity: 1,
+          scale,
+          ease: "power2.out",
+        });
+      }
+    );
 
     const handleMouseMove = (e) => {
       const mouseX = e.clientX;
@@ -39,7 +125,6 @@ export default function ParticleAnimationGSAP() {
 
       particles.forEach((particle, index) => {
         const data = particlesData[index];
-
         const xOffset = gsap.utils.mapRange(
           0,
           window.innerWidth,
@@ -60,29 +145,39 @@ export default function ParticleAnimationGSAP() {
           y: yOffset,
           rotate: data.rotation,
           duration: 1.5,
-          ease: 'power2.out'
+          ease: "power2.out",
         });
       });
     };
 
-    gsap.to('.particle-wrapper', {
-      ease: 'power1.inOut',
+    gsap.to(".particle-wrapper", {
+      ease: "power1.inOut",
       scrollTrigger: {
-        trigger: '.particle-wrapper',
-        start: 'top top',
-        end: 'bottom top',
+        trigger: ".particle-wrapper",
+        start: "top top",
+        end: "bottom top",
         scrub: true,
         onUpdate: (self) => {
-          const newScale = 1 + self.progress;
-          gsap.set('.particle-wrapper', { scale: newScale });
+          const baseScale =
+              window.innerWidth <= 770
+              ? 1
+              : window.innerWidth <= 910
+              ? 1.1
+              : window.innerWidth <= 1050
+              ? 1.3
+              : 1.5;
+
+          const newScale = baseScale + self.progress;
+          gsap.set(".particle-wrapper", { scale: newScale });
         },
       },
     });
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener("mousemove", handleMouseMove);
+      mm.revert();
     };
   }, []);
 

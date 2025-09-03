@@ -4,8 +4,8 @@ import MagneticWrapper from "./common/MagneticWrapper";
 
 export default function ProjectCard({ icon, title, subtitle, year, description, buttonText = "Github", url, image }) {
   return (
-    <div className="flex flex-col max-w-4xl min-h-110 md:flex-row items-center bg-[#eceff1] rounded-3xl px-16 hover:scale-102 transition-all duration-300 hover:bg-[#f6f6f6] hover:shadow-[0_4px_24px_0_#00000014] antialiased overflow-hidden">
-      <div className="flex flex-col justify-start items-start w-105">
+    <div className="flex flex-col max-w-4xl min-h-110 md:flex-row items-center bg-[#eceff1] rounded-3xl px-6 sm:px-16 pt-6 sm:pt-16 md:pt-0 hover:scale-102 transition-all duration-300 hover:bg-[#f6f6f6] hover:shadow-[0_4px_24px_0_#00000014] antialiased overflow-hidden">
+      <div className="flex flex-col justify-start items-start w-75 sm:w-105">
           {icon && <img src={icon} alt="icon" className="w-8 h-8 rounded-lg mb-4" />}
 
           <h2 className="text-4xl font-bold bg-linear-[145deg,#6d6d6e_5%,#1e1e22] bg-clip-text text-transparent mb-4">{title}</h2>
@@ -35,7 +35,7 @@ export default function ProjectCard({ icon, title, subtitle, year, description, 
           <img
             src={image}
             alt="snap home"
-            className="object-cover h-100 max-w-md md:relative md:-bottom-5 md:-right-16"
+            className="object-cover h-80 lg:h-100 max-w-md md:relative md:-bottom-5 md:-right-16"
           />
       </div>
     </div>
