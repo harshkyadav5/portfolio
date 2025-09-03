@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <>
-      <div className="block relative overflow-hidden">
+      <div className="block relative overflow-hidden scroll-ref">
         <Hero />
 
         <div className="flex flex-col justify-center items-center gap-25 mb-25 antialiased load">

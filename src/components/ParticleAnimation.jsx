@@ -86,7 +86,7 @@ export default function ParticleAnimationGSAP() {
     gsap.to(".particle-wrapper", {
       ease: "power1.inOut",
       scrollTrigger: {
-        trigger: ".particle-wrapper",
+        trigger: ".scroll-ref",
         start: "top top",
         end: "bottom top",
         scrub: true,
