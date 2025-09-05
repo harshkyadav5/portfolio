@@ -41,7 +41,7 @@ export default function ParticleAnimationGSAP() {
         if (context.conditions.isSmallTablet) scale = 1.1;
         if (context.conditions.isMobile) scale = 1;
 
-        gsap.set(wrapper, { scale, opacity: 0 });
+        gsap.set(wrapper, { scale: 2.5, opacity: 0 });
 
         gsap.to(wrapper, {
           duration: 1,
