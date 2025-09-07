@@ -16,33 +16,46 @@ import pandasLogo from "../assets/pandas.svg";
 import sklearnLogo from "../assets/sklearn.svg";
 import matplotlibLogo from "../assets/matplotlib.svg";
 import seabornLogo from "../assets/seaborn.svg";
-import tensorflowLogo from "../assets/tensorflow.svg";
+// import tensorflowLogo from "../assets/tensorflow.svg";
 import mysqlLogo from "../assets/mysql.svg";
 import postgresLogo from "../assets/postgres.svg";
 import gitLogo from "../assets/git.svg";
 import githubLogo from "../assets/github_1.svg";
 
 const techStack = [
-  { name: "HTML5", logo: htmlLogo },
-  { name: "CSS3", logo: cssLogo },
-  { name: "TailwindCSS", logo: tailwindLogo },
-  { name: "JavaScript", logo: jsLogo },
-  { name: "React", logo: reactLogo },
-  { name: "Node.js", logo: nodeLogo },
-  { name: "Express.js", logo: expressLogo },
-  { name: "C++", logo: cppLogo },
-  { name: "Python", logo: pythonLogo },
-  { name: "Java", logo: javaLogo },
-  { name: "MySQL", logo: mysqlLogo },
-  { name: "PostgreSQL", logo: postgresLogo },
-  { name: "NumPy", logo: numpyLogo },
-  { name: "Pandas", logo: pandasLogo },
-  { name: "Scikit-Learn", logo: sklearnLogo },
-  { name: "Matplotlib", logo: matplotlibLogo },
-  { name: "Seaborn", logo: seabornLogo },
-  { name: "TensorFlow", logo: tensorflowLogo },
-  { name: "Git", logo: gitLogo },
-  { name: "GitHub", logo: githubLogo },
+  // Web Development
+  { name: "HTML5", logo: htmlLogo, category: "Web Development" },
+  { name: "CSS3", logo: cssLogo, category: "Web Development" },
+  { name: "TailwindCSS", logo: tailwindLogo, category: "Web Development" },
+  { name: "JavaScript", logo: jsLogo, category: "Web Development" },
+  { name: "React", logo: reactLogo, category: "Web Development" },
+  { name: "Node.js", logo: nodeLogo, category: "Web Development" },
+  { name: "Express.js", logo: expressLogo, category: "Web Development" },
+
+  // Programming
+  { name: "C++", logo: cppLogo, category: "Programming" },
+  { name: "Python", logo: pythonLogo, category: "Programming" },
+  { name: "Java", logo: javaLogo, category: "Programming" },
+
+  // Database
+  { name: "MySQL", logo: mysqlLogo, category: "Database" },
+  { name: "PostgreSQL", logo: postgresLogo, category: "Database" },
+
+  // Data Science
+  { name: "NumPy", logo: numpyLogo, category: "Data Science" },
+  { name: "Pandas", logo: pandasLogo, category: "Data Science" },
+
+  // Machine Learning
+  { name: "Scikit-Learn", logo: sklearnLogo, category: "Machine Learning" },
+  // { name: "TensorFlow", logo: tensorflowLogo, category: "Machine Learning" },
+
+  // Data Visualization
+  { name: "Matplotlib", logo: matplotlibLogo, category: "Data Visualization" },
+  { name: "Seaborn", logo: seabornLogo, category: "Data Visualization" },
+
+  // Version Control
+  { name: "Git", logo: gitLogo, category: "Version Control" },
+  { name: "GitHub", logo: githubLogo, category: "Version Control" },
 ];
 
 export default function TechStack() {
@@ -104,8 +117,11 @@ export default function TechStack() {
       className="flex flex-col items-center justify-center bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
     >
       <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
-      <span className="text-base text-gray-700 text-center tracking-wider">
+      <span className="text-base text-gray-800 text-center tracking-wide mb-1">
         {tech.name}
+      </span>
+      <span className="text-sm text-gray-500 text-center tracking-wider">
+        {tech.category}
       </span>
     </div>
   );
@@ -130,8 +146,11 @@ export default function TechStack() {
                   className="flex flex-col items-center justify-center min-w-[140px] bg-[#eceff1] rounded-3xl p-4 transition-all duration-300 hover:bg-[#f6f6f6] hover:scale-101 hover:shadow-[0_4px_24px_0_#00000014]"
                 >
                   <img src={tech.logo} alt={tech.name} className="h-13 w-13 mb-4" />
-                  <span className="text-base text-gray-700 text-center tracking-wider">
+                  <span className="text-base text-gray-800 text-center tracking-wider mb-1">
                     {tech.name}
+                  </span>
+                  <span className="text-sm text-gray-500 text-center tracking-wider">
+                    {tech.category}
                   </span>
                 </div>
               ))}
