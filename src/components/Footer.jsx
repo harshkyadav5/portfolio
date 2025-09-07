@@ -30,7 +30,7 @@ const socials = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#f1f1f1] py-10 antialiased load">
+    <footer className="bg-[#f1f1f1] py-10 antialiased tracking-wide load">
       <div className="flex flex-col items-center gap-6">
         <div className="flex gap-8 items-center">
           {socials.map(({ href, img, label }, i) => (
