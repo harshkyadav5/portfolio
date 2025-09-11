@@ -34,7 +34,7 @@ export default function ProjectCard({ icon, title, subtitle, year, description, 
       <div className="gap-4 flex justify-center relative transition-all duration-300">
           <img
             src={image}
-            alt="snap home"
+            alt={title}
             className="object-cover h-auto min-h-20 w-full mt-6 relative -right-10 lg:h-100 max-w-md md:relative md:-bottom-5 md:-right-16 transition-all duration-300"
           />
       </div>
@@ -78,7 +78,7 @@ export default function ProjectCard({ icon, title, subtitle, year, description, 
 //       <div className="gap-4 flex justify-center relative">
 //           <img
 //             src={image}
-//             alt="snap home"
+//             alt={title}
 //             className="object-cover h-80 lg:h-100 max-w-md md:relative md:-bottom-5 md:-right-16"
 //           />
 //       </div>
