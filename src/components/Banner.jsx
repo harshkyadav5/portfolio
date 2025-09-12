@@ -41,7 +41,7 @@ export default function Banner() {
             <img
               src={MyImage}
               alt="My image"
-              className="absolute w-full h-full object-cover rounded-full backface-hidden border-3 shadow-[0_8px_32px_#00000029] border-white/50 bg-white/30 transition-all duration-300"
+              className="absolute w-full h-full object-cover rounded-full backface-hidden border-2 sm:border-3 shadow-[0_8px_32px_#00000029] border-white/50 bg-white/30 transition-all duration-300"
             />
 
             {/* Back */}

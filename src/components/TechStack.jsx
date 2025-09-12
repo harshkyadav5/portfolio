@@ -127,7 +127,7 @@ export default function TechStack() {
   );
 
   return (
-    <section className="relative pt-6 pb-40 text-gray-800 overflow-hidden antialiased load">
+    <section className="relative pt-6 pb-14 text-gray-800 overflow-hidden antialiased load">
       <div className="max-w-5xl mx-auto">
         <h2 className="text-3xl font-bold mb-2 mt-6 p-2 text-center text-[#5e5e63]">
           My Tech Stack
